@@ -1,0 +1,98 @@
+<%- include('../template/header') -%> 
+<nav class="container">
+        <ul class="nav py-2 justify-content-between">
+            <li>
+                <a href="/vinos/busqueda">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </a>
+            </li>
+    
+            <li><%=nuevoVino.bodega%></li>
+    
+            <li>
+                <form action="/favoritos" id="form" method="post" enctype="application/x-www-form-urlencoded">
+                    <button class="btn" type="submit" title="favorito">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </button>
+                </form>
+            </li>    
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <div class="my-3 m-auto" style="max-width: 540px;">
+            <div class="row g-0 align-middle">
+              <div class="col-4 m-auto rounded-start">
+                <img src="/img/vinos/750px/<%=nuevoVino.img%>" class="img-fluid d-block mx-auto p-2 img-max-w-90" alt="vino destacado">
+              </div>
+              <div class="col-8 align-self-center mr-3">
+                <div class="card-body">
+                  <h3 class="card-title"><%=nuevoVino.nombre%></h3>
+                  <p class="m-0"><%=nuevoVino.bodega%></p>
+                  <p class="m-0"><%=nuevoVino.uva%></p>
+                  <p class="my-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                    </svg>
+                    <%=nuevoVino.puntuacion%>
+                  </p>
+
+                  <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+                    </svg>
+                    Origen, Argentina
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="py-3">
+            <h4 class="small text-danger text-center">Maridajes</h4>
+
+            <div class="row"> 
+                <div class="col-4">
+                    <img src="../img/icon-maridajes/png/carne.png" alt="carnes" class="d-block m-auto">
+                    <p class="small dangerS text-center text-danger">Carnes</p>
+                </div>
+
+                <div class="col-4">
+                    <img src="../img/icon-maridajes/png/pastas.png" alt="pastas" class="d-block m-auto">
+                    <p class="small dangerS text-center text-danger">Pastas</p>
+                </div>
+
+                <div class="col-4">
+                    <img src="../img/icon-maridajes/png/guiso.png" alt="Guisos" class="d-block m-auto">
+                    <p class="small dangerS text-center text-danger">Guisos</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div>
+            <h4>Descripción</h4>
+            <p><%=nuevoVino.detalle_largo%>
+            </p>
+
+        </div>
+
+    </main>
+
+    <%- include('../template/footer') -%>     
+
+<script>
+    document.getElementById('busqueda').classList.add('active');
+    let user =JSON.parse(localStorage.getItem('user'))
+    let ruta = document.getElementById('form')
+
+    ruta.action=user+"/favoritos" 
+</script>

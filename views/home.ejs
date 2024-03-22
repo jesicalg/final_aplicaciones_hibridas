@@ -1,0 +1,68 @@
+
+
+<% if (user) {
+  let newuser = user%>
+  <script>
+    let user = <%-JSON.stringify(user)%>
+    localStorage.setItem('user', JSON.stringify(user));
+    </script>
+<%}%>
+
+
+<%- include('template/header') -%> 
+
+    <main class="my-4 container">
+        <article class="card mb-3 m-auto" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-4 m-auto bg-celeste rounded-start">
+                <img src="/img/vinos/148px/escorihuela-rose-148px.png" class="img-fluid d-block mx-auto p-2" alt="vino destacado">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h3 class="card-title">Destacado</h3>
+                  <p class="card-text">Descubrí el vino destacado de esta semana.</p>
+                 
+                </div>
+              </div>
+            </div>
+        </article>
+
+        <article class="my-5 container justify-content-center p-0 m-auto">
+
+          <h3 class="mb-3 text-center">Búsquedas recientes</h3>
+
+          <div class="container bg-colors row justify-content-around m-0 p-0">
+
+            <div class="col-4 rounded w-125">
+              <img src="img/vinos/148px/don-nicanor-malbec-148px.png" class="img-fluid d-block mx-auto p-2" alt="...">
+            </div>
+
+            <div class="col-4 rounded w-125">
+                <img src="img/vinos/148px/bianchi-marlo-148px.png" class="img-fluid d-block mx-auto p-2" alt="...">
+            </div>
+
+            <div class="col-4 rounded w-125">
+                <img src="img/vinos/148px/portillo-malbec-148px.png" class="img-fluid d-block mx-auto p-2" alt="...">
+            </div>
+          </div>
+        </article>
+
+        <article class="card mb-3 m-auto" style="max-width: 540px;">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">Consejos</h3>
+                <p class="card-text">Chequeá estos consejos para disfrutar de una buena copa de vino</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+    </main>
+
+<%- include('template/footer') -%> 
+
+<script>
+    document.getElementById('home').classList.add('active');
+</script>
+

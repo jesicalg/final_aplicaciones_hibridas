@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<body>
+    <main class="container">
+        <h1></h1>
+        <h2>Administración</h2>
+
+        <form class="needs-validation p-4" novalidate="" action="/vinos/nuevo" method="post" enctype="application/x-www-form-urlencoded">
+            <h3>Alta de vino</h3>
+            <p>Completá el siguiente formulario para dar de alta un vino en la base de datos.</p>
+            <div class="row g-3 p-3">
+              <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Nombre del vino:</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Vinito" value="" required="" name="nombre">
+                    <div class="invalid-feedback">
+                        Debes indicar un nombre.
+                    </div>
+                </div>
+  
+                <div class="col-sm-6">
+                    <label for="Bodega" class="form-label">Bodega:</label>
+                    <input type="text" class="form-control" id="bodega" placeholder="Nombre de bodega" value="" required="" name="bodega">
+                    <div class="invalid-feedback">
+                        Debes indicar la bodega.
+                    </div>
+                </div>
+              
+                <div class="col-sm-6"> 
+                    <p class="form-label" for="input-img">Imágen</p>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="input-img" name="img">
+                        <label class="input-group-text" for="input-img">Subir</label>
+                    </div>
+                </div>
+
+                    
+                <div class="col-sm-6">
+                    <label for="Bodega" class="form-label">Crianza:</label>
+                    <input type="text" class="form-control" id="bodega" placeholder="Ej. 12 meses en barrica de roble" value="" required="" name="crianza">
+                    <div class="invalid-feedback">
+                        Debes indicar el tipo de crianza. Ej. 12 meses en barrica de roble.
+                    </div>
+                </div>
+
+  
+                <div class="col-sm-3">
+                    <label for="zip" class="form-label">Temperatura de servicio:</label>
+                    <input type="text" class="form-control" id="temp_serv" placeholder="Ej. 16°C" required="" name="temp_serv">
+                    <div class="invalid-feedback">
+                        Debes indicar la temperatura ideal de servicio.
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <label for="select" class="form-label">Guarda:</label>
+                    <select id="guardaSelect" class="form-select" name="guarda">
+                        <option>Joven - no más de 1 año</option>
+                        <option>Crianza - 4 a 5 años</option>
+                        <option>Reserva - 8 a 10 años</option>
+                        <option>Gran reserva - Más de 15 años</option>
+                    </select>
+                </div>
+                <div class="col-sm-12">
+                    <label for="detalle">Detalle Largo:</label>
+                    <textarea class="form-control" name="detalle" id="detalle" cols="30" rows="10" placeholder="Detalle"></textarea>
+                </div>
+                <div class="col-sm-6">
+                    <label for="select" class="form-label">Tipo:</label>
+                    <select id="guardaSelect" class="form-select" name="tipo">
+                        <option>Vino Tinto</option>
+                        <option>Vino Blanco</option>
+                        <option>Vino Rosa</option>
+                        <option>Vino Espumante </option>
+                    </select>
+                </div>
+                <div class="row py-3">
+                    <p>Tipo de uva/s:</p>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="Bonarda" id="bonarda" name="uva">
+                        <label class="form-check-label" for="Bonarda">
+                            Bonarda
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="Cabernet Sauvignon" id="cabernetSauvignon" name="uva">
+                        <label class="form-check-label" for="Cabernet Sauvignon">
+                            Cabernet Sauvignon
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="Cabernet Franc" id="cabernetFranc" name="uva">
+                        <label class="form-check-label" for="Cabernet Franc">
+                            Cabernet Franc
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="chardonnay" id="chardonnay" name="uva">
+                        <label class="form-check-label" for="chardonnay">
+                            Chardonnay
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="carmenere" id="carmenere" name="uva">
+                        <label class="form-check-label" for="carmenere">
+                            Carmenere
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="malbec" id="malbec" name="uva">
+                        <label class="form-check-label" for="malbec">
+                         Malbec
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="merlot" id="merlot" name="uva">
+                        <label class="form-check-label" for="merlot">
+                            Merlot
+                        </label>
+                    </div>
+                
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="Petit Verdot" id="petitVerdot" name="uva">
+                        <label class="form-check-label" for="Petit Verdot">
+                            Petit Verdot
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="Pinot noir" id="pinotNoir" name="uva">
+                        <label class="form-check-label" for="Pinot noir">
+                            Pinot noir
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="semillon" id="semillon" name="uva">
+                        <label class="form-check-label" for="Semillón">
+                            Semillón
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="tannat" id="tannat" name="uva">
+                        <label class="form-check-label" for="tannat">
+                            Tannat
+                        </label>
+                    </div>
+                
+                    <div class="form-check col-sm-3">
+                    <input class="form-check-input" type="checkbox" value="tempranillo" id="tempranillo" name="uva">
+                        <label class="form-check-label" for="Tempranillo">
+                            Tempranillo
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="torrontes" id="torrontes" name="uva">
+                        <label class="form-check-label" for="Torrontés">
+                            Torrontés
+                        </label>
+                    </div>
+
+                    <div class="form-check col-sm-3">
+                        <input class="form-check-input" type="checkbox" value="viognier" id="viognier" name="uva">
+                        <label class="form-check-label" for="Viognier">
+                            Viognier
+                        </label>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="col-4 mx-auto">
+                <button class="w-50 btn btn-dark btn-lg" type="submit">Confirmar</button>
+            </div>
+          </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

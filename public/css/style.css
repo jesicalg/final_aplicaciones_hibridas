@@ -1,0 +1,66 @@
+:root{
+    /* #223333 */
+    --bs-dark-rgb: 34,51,51;
+    --bs-link-color: 34,51,51;
+
+
+    /* #993333 */
+    --bs-danger-rgb: 153,51,51;
+}
+
+
+.msg{
+    display: none;
+}
+.err{
+    color: red;
+    font-size: 0.75em;
+    display: block;
+}
+
+.navbar-dark {
+    --bs-navbar-color: rgba(249, 249, 249, 1);
+    --bs-navbar-hover-color: rgba(153, 204, 204, 1);
+}
+
+.nav-pills {
+    --bs-nav-pills-border-radius: 1rem;
+    --bs-nav-pills-link-active-color: #f9f9f9;
+    --bs-nav-pills-link-active-bg: #223333;
+}
+
+.bg-amarillo {
+    background-color: #ffcc66;
+}
+
+.bg-celeste {
+    background-color: #99cccc;
+}
+
+.bg-celesteOscuro {
+    background-color: #669999;
+}
+
+.bg-colors > :first-child {
+    background-color: #ffcc66;
+}
+
+.bg-colors > :nth-child(2) {
+    background-color: #99cccc;
+}
+
+.bg-colors > :nth-child(3) {
+    background-color: #669999;
+}
+
+.w-125 {
+    max-width: 110px;
+}
+
+.img-max-w-36 {
+    max-width: 40px;
+}
+
+.img-max-w-90 {
+    max-width: 90px;
+}

@@ -1,0 +1,16 @@
+<%- include('../template/header') -%> 
+<section>
+    <%if(message!==""){%>
+    <div class="d-flex flex-column justify-content-center vh-100 align-items-center">
+        
+        <p class="w-75 text-muted">
+        <%=message%>
+        </p>
+        <a href="/registro">Ir al registro</a>
+    </div>
+    <%}%>
+</section>
+<%- include('../template/footer') -%>  
+<script>
+    document.getElementById('mislistas').classList.add('active');
+</script>   
